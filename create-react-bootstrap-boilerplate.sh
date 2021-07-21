@@ -17,17 +17,20 @@ done
 npx create-react-app $TITLE
 
 # install node dependecies
-cd $TITLE/ && npm i sass react-bootstrap
+cd $TITLE/ && npm i sass react-bootstrap bootstrap
 
 # remove the junk
 cd src/ && rm -rf App.css App.test.js index.css logo.svg reportWebVitals.js setupTests.js
 
 # build files
-echo "* {
+echo "@import "~bootstrap/scss/bootstrap";
+
+* {
   box-sizing: border-box;
 }
 
-html, body {
+html, body, #root {
+  height: '100%',
   margin: 0;
 }" > App.scss
 
